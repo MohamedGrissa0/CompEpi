@@ -3,7 +3,7 @@ import React from 'react'
 function MenuBar() {
   return (
     <>
-    <div className="container-menu">
+    <div className="container-menu h-[100vh]">
       <ul className="menuBar">
         <li>memu 1</li>
         <li>memu 2</li>

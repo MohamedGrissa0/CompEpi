@@ -3,13 +3,14 @@ import 'animate.css';
 import Navbar from './Components/Navbar/Navbar';
 import './Components/Menu/menuBar.css';
 import MenuBar from './Components/Menu/MenuBar';
+import Slider from './Components/Slider/Slider';
 
 export default function App() {
   return (
-    <><div className=''>
+    <div className='h-full'>
       <Navbar />
-    </div><div>
-        <MenuBar></MenuBar>
-      </div></>
+      <MenuBar />
+        <Slider/>
+      </div>
   )
 }

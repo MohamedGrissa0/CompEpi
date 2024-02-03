@@ -1,0 +1,62 @@
+
+      .center {
+       height: 1700px;
+       width: 100vw;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slider {
+        width: 100%;
+        height: fit-content;
+        padding: 40px 0;
+        overflow: auto;
+      }
+      .slider::-webkit-scrollbar {
+        width: 80px;
+        height: 3px;
+        z-index: 99;
+      }
+      .slider::-webkit-scrollbar-thumb {
+        
+        background: rgb(0, 0, 0);
+        z-index: 99;
+        border-radius: 10px;
+      }
+      .slider::-webkit-scrollbar-track {
+        background: rgba(224, 224, 224, 0.2);
+        z-index: 99;
+      }
+      .card {
+        width: 220px;
+        height:100px;
+        background: white;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        font-family: poppins;
+        position: relative;
+        margin: 0 20px;
+      }
+      .title {
+        font-size: 40px;
+        font-weight: 600;
+      }
+      .subtitle {
+        font-size: 14px;
+      }
+      .card span {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 30px;
+      }
+      .cards {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }

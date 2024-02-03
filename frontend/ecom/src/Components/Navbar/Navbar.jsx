@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
 
 <div className='flex flex-col '>
-<div class="flex flex-row   items-center w-full justify-around  p-4">
+<div class="md:flex flex-row hidden  items-center w-full justify-around  p-4">
 <div className='flex flex-row items-center justify-between space-x-3'>
 <img src={a} width={30} height={20} />
 <img src={b} width={30} height={20} />
@@ -60,10 +60,10 @@ export default function Navbar() {
         <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..."/>
       </div>
       <div className=' px-8 space-x-2 w-full'>
-  <span className="material-symbols-outlined text-3xl">
+  <span className="material-symbols-outlined text-3xl cursor-pointer">
     person
   </span>
-  <span className="material-symbols-outlined text-3xl relative z-2">
+  <span className="material-symbols-outlined text-3xl relative z-2 cursor-pointer">
     shopping_bag
   </span>
 </div>
