@@ -38,6 +38,7 @@ body {
   }
 */
 .menuBar {
+  cursor: pointer;
     list-style: none;
     padding: 0;
     display: flex;
@@ -53,6 +54,7 @@ body {
   }
   
   .submenu {
+    cursor: pointer;
     display: none;
     position: absolute;
     top: 100%;
