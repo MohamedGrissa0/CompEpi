@@ -6,11 +6,10 @@ import MenuBar from './Components/Menu/MenuBar';
 
 export default function App() {
   return (
-    <div className=''>
+    <><div className=''>
       <Navbar />
-    </div>
-    <div>
-      <MenuBar></MenuBar>
-    </div>
+    </div><div>
+        <MenuBar></MenuBar>
+      </div></>
   )
 }
