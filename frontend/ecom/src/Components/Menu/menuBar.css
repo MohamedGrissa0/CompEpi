@@ -15,7 +15,7 @@ body {
     background-color: black;
     z-index: 1000; /* Adjust z-index as needed */
   }
-  
+  /*
   .menuBar {
     list-style: none;
     padding: 0;
@@ -23,8 +23,7 @@ body {
     justify-content: space-between;
     align-items: center;
     color: aliceblue;
-    /* Other styling properties as needed */
-  }
+   }
   
   .menuBar li {
     font-weight: 600;
@@ -37,7 +36,36 @@ body {
   .menuBar li:hover{
     color: var(--color);
   }
-
+*/
+.menuBar {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    background-color: black;
+  }
+  
+  .menuBar li {
+    margin-left: 50px;
+    position: relative;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+  }
+  
+  .menuBar li:hover .submenu {
+    cursor: pointer;
+    width: 220px;
+    display: block;
+  }
+  
   .center-screen {
     margin-top: -60px;
     position: absolute;
