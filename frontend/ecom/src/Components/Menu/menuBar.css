@@ -96,3 +96,10 @@ body {
     width: 120px;
     border-radius: 19px;
   }
+  .landing-pic {
+    position: absolute;
+    max-width: 48%;
+    margin-left: 48%;
+    z-index: 0;
+    /* transform: rotate(-21deg); */
+}

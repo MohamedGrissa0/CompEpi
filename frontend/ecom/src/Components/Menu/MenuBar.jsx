@@ -1,4 +1,5 @@
 import React from 'react'
+import Phone from '../../assets/phone-pic/phone.png'
 
 function MenuBar() {
   return (
@@ -21,6 +22,7 @@ function MenuBar() {
             <button className="button-book"> <span>Book Now !</span></button>
         </div>
       </div>
+      <img src={Phone} alt='' className="landing-pic"></img> 
     </div>
     </>
   )
