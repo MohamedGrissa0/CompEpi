@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Adjust the height as needed */
+    background-color: black;
+    z-index: 1000; /* Adjust z-index as needed */
+  }
+  
+  .menuBar {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    /* Other styling properties as needed */
+  }
+  
+  .menuBar li {
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 30px;
+    font-size: 14.875px;
+    text-transform: uppercase;
+    font-family: Poppins, sans-serif;
+  }
+  .menuBar li:hover{
+    color: var(--color);
+  }
+
+  .center-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .landing-page-container {
+    border-radius: 19px;
+    height: 70vh;
+    max-height: 80vh;
+    width: 80vw;
+    background-color: var(--color);
+    /* Additional styling properties as needed */
+  }
+  
+  .landing-page-container p {
+    /* Additional styling for the paragraph inside landing-page-container if needed */
+  }
+  .container-message{
+    margin-left: 30px;
+    margin-top: 120px;
+    position: absolute;
+    width: 30%;
+  }
+  .text1{
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .text2{
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+  .text3{
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 23px;
+  }
+  .button-book {
+    border: var(--color2) solid 1px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: var(--color2);
+    color: var(--color3);
+    height: 40px;
+    width: 120px;
+    border-radius: 19px;
+  }
