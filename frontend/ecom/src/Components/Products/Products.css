@@ -1,6 +1,8 @@
 .container-products{
-    margin-left: 20%;
-    margin-top: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
     position: relative;
     width: 70%;
     height: 90vh;

@@ -7,6 +7,8 @@ import Slider from './Components/Slider/Slider';
 import { Slide } from 'react-toastify';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Page from './Components/Page/Page';
+import Products from './Components/Products/Products';
+import Box from './Components/box/Box';
 
 export default function App() {
   return (
@@ -16,8 +18,8 @@ export default function App() {
               <MenuBar />
               <Slider />
               
-              
-              
+              <Products/>
+              <Box/>
               
             </div>
          
