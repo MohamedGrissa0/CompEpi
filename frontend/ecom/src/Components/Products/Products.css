@@ -1,0 +1,30 @@
+.container-products{
+    margin-left: 20%;
+    margin-top: 40%;
+    position: relative;
+    width: 70%;
+    height: 90vh;
+}
+.product-title {
+    color: black;
+    height: 50px;
+    justify-content: space-around;
+    display: flex;
+    background-color: transparent;
+    padding-top: 12px;
+}
+/* Add this style to hide the <p> initially */
+.hover-content p {
+    display: none;
+}
+.pic-card{
+    height: 70%;
+}
+/* Add this style to show the <p> when hovering */
+/* Add this style to show the <p> when hovering */
+.hover-content:hover p {
+    display: block !important;
+    background-color: white; /* Set your desired background color */
+    padding: 10px; /* Add padding for better readability */
+}
+

@@ -1,6 +1,6 @@
 import React from 'react'
 import Phone from '../../assets/phone-pic/phone.png'
-
+import Products from '../Products/Products'
 function MenuBar() {
   return (
     <>
@@ -55,6 +55,7 @@ function MenuBar() {
       </div>
       <img src={Phone} alt='' className="landing-pic"></img> 
     </div>
+    <Products></Products>
     </>
   )
 }
