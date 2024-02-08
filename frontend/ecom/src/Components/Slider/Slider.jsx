@@ -27,7 +27,7 @@ export default function Slider() {
   };
 
   return (
-    <div className="center mx-auto mt-5 relative container">
+    <div className="center mx-auto my-5 relative container">
       <div className="slider  " ref={sliderRef} >
         <div className="cards">
           {cardData.map((card, index) => (
