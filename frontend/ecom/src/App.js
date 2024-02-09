@@ -7,6 +7,9 @@ import { OpenProvider } from './Page/Dashboard/Components/Context.js';
 import Orders from './Page/Dashboard/Components/Orders.jsx';
 import Customers from './Page/Dashboard/Components/Customers.jsx';
 import Products from './Page/Dashboard/Components/Products.jsx';
+import Categories from './Page/Dashboard/Components/Categories.jsx';
+import Allps from './Page/Dashboard/Components/Allps.jsx';
+import AddCategory from './Page/Dashboard/Components/AddCategory.jsx';
 
 export default function App() {
   return (
@@ -19,9 +22,11 @@ export default function App() {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/orders" element={<Orders />} />
         <Route exact path="/Customers" element={<Customers />} />
-        <Route exact path="/Products" element={<Products />} />
+        <Route exact path="/add-Products" element={<Products />} />
+        <Route exact path="/Products" element={<Allps />} />
+        <Route exact path="/add-Category" element={<AddCategory />} />
 
-        Products
+        <Route exact path="/Categories" element={<Categories/>} />
       </Routes>
     </Router>
     </OpenProvider>

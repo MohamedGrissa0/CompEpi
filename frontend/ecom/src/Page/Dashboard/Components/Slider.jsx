@@ -10,9 +10,9 @@ export default function Slider() {
     <SlideCard name="Orders" icon="attach_money" path="/orders"/> 
     <SlideCard name="Customers" icon="person" path="/Customers" />
     <SlideCard name="products" icon="inventory_2" path="/Products" />
-    <SlideCard name="Home" icon="store" />
+    <SlideCard name="Categories" icon="category" path="/Categories" />
     <p className='my-5 p-4 text-xs'>ACCOUNT PAGES</p>
-    <SlideCard name="Profile" icon="person" />
+    <SlideCard name="Profile" icon="person" path="/profil" />
     <SlideCard name="Logout" icon="logout" />
 
 

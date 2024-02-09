@@ -16,7 +16,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className=" flex md:block items-center justify-between shadow-lg p-5">
+    <div className=" flex md:block items-center bg-white justify-between shadow-lg p-5">
       <div>
         <img src={logo} alt="Logo" width={70} />
       </div>
