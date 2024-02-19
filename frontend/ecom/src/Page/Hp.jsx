@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Slider from '../Components/Slider/Slider'
 import Footer from '../Components/Footer/Footer'
@@ -8,13 +8,15 @@ import MenuBar from '../Components/Menu/MenuBar'
 import Categories from '../Components/Categories/Categories'
 import Footerb from '../Components/Footer/Footerb/Footerb'
 
-export default function 
-() {
+export default function () {
+  useEffect(()=>{
+
+  },)
   return (
     <div>
         <Navbar />
-        <Slider/>
         <MenuBar/>
+        <Slider/>
         <Products title="top rated"/>
         <Categories />
         <Products title="top rated"/>

@@ -1,18 +1,109 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import CardMain from './CardMain';
+import axios from 'axios';
 
+import { ToastContainer, toast } from 'react-toastify';
 
 
 export default function Main() {
+    const [users, setUsers] = useState([]);
+    const [orders, setOrders] = useState([]);
+    const [orderslegth, setorderslegth] = useState(0);
+    const [userslegth, setuserslegth] = useState(0);
+    const [sh, setsh] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
+
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:4000/api/auth/`);
+                if (response.status === 200) {
+                    setUsers(response.data);
+                    setuserslegth(response.data)
+                }
+            } catch (error) {
+                console.error(error);
+                // Handle error
+            }
+        };
+        fetchData();
+    }, );
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:4000/api/order/`);
+                if (response.status === 200) {
+                    setorderslegth(response.data);
+                }
+            } catch (error) {
+                console.error(error);
+                // Handle error
+            }
+        };
+        fetchData();
+    }, );
+ const selectedOption = "pending"
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:4000/api/order/${selectedOption}`);
+                if (response.status === 200) {
+                    setOrders(response.data);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, [selectedOption]);
+
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:4000/api/order/${"shipped"}`);
+                if (response.status === 200) {
+                    setsh(response.data);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, );
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:4000/api/order/${"shipped"}`);
+                if (response.status === 200) {
+                    setOrders(response.data);
+                    // Calculate total price
+                    const totalPrice = response.data.reduce((acc, order) => {
+                        return acc + order.totalPrice;
+                    }, 0);
+                    setTotalPrice(totalPrice);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, []);
     
   return (
     <div className='col-span-12 md:col-span-10 my-2   w-full '>
       <div className='flex flex-col md:flex-row items-center  w-[100%] gap-4 justify-center flex-wrap py-4 '>
-        <CardMain name="Revenue" price="50,000" />
-        <CardMain name="Revenue" price="50,000" />
-        <CardMain name="Revenue" price="50,000" />
-        <CardMain name="Revenue" price="50,000" />
+        <CardMain name="Revenue" price={totalPrice+ "$"} />
+        <CardMain name="Orders" price={orderslegth.length} />
+        <CardMain name="Customers" price={userslegth.length} />
+        <CardMain name="Shipped" price={sh.length} />
         
         
       </div>
@@ -109,38 +200,20 @@ export default function Main() {
             </tr>
         </thead>
         <tbody>
-        <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
+            {users.map((item)=>{
+                return(
+                       <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>            {}
                 <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                     <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" className="w-8 rounded-full" alt='Customer'/>
                 </td>
                 <td className="px-6 py-4">
-                    Silver
+                    {item.username}
                 </td>
             </tr>
-            <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
-                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" className="w-8 rounded-full" alt='Customer'/>
-                </td>
-                <td className="px-6 py-4">
-                    Silver
-                </td>
-            </tr>
-            <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
-                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" className="w-8 rounded-full" alt='Customer'/>
-                </td>
-                <td className="px-6 py-4">
-                    Silver
-                </td>
-            </tr>
-            <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
-                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" className="w-8 rounded-full" alt='Customer'/>
-                </td>
-                <td className="px-6 py-4">
-                    Silver
-                </td>
-            </tr>
+                )
+            })
+     }
+    
         </tbody>
     </table>
 </div>
@@ -243,44 +316,21 @@ export default function Main() {
             </tr>
         </thead>
         <tbody>
-        <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
-                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex flex-row ">
-                    <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" className="w-8 rounded-full" alt='Customer'/>
-                    <div className='px-4'>
-                        <p>Mohamed</p>
-                        <p>19/04/2000 | 22:00:00</p>
-
-                    </div>
-                </td>
-                <td className="px-6 py-4 font-bold ">
-                    $25
-                </td>
-            </tr>
-            <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
+       
+           {orders.map((item)=>{
+            return(
+                 <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
                 <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" className="w-8 rounded-full" alt='Customer'/>
+                    <p>{item._id}</p>
                 </td>
                 <td className="px-6 py-4 font-bold">
-                $25
-                </td>
-            </tr>
-            <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
-                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" className="w-8 rounded-full" alt='Customer'/>
-                </td>
-                <td className="px-6 py-4 font-bold">
-                $25
-                </td>
-            </tr>
-            <tr className='text-xs text-gray-900 uppercase dark:text-gray-500 border-collapse border-b border-white border-1'>
-                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                    <img src="https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg" className="w-8 rounded-full" alt='Customer'/>
-                </td>
-                <td className="px-6 py-4 font-bold">
-                $25
+                ${item.totalPrice}
 
                 </td>
             </tr>
+            )
+           })
+           }
         </tbody>
     </table>
 </div>
